@@ -1,15 +1,15 @@
-module.exports = {
+export default {
   development: {
-    client: "sqlite3",
+    client: 'sqlite3',
     connection: {
-      filename: "./database.sqlite",
+      filename: './database.sqlite', // Caminho para o banco
     },
     useNullAsDefault: true,
     migrations: {
-      directory: "./src/migrations",
+      directory: './src/migrations',
     },
     seeds: {
-      directory: "./src/seeds",
+      directory: './src/seeds',
     },
   },
 };
