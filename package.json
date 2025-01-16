@@ -7,6 +7,11 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "migrate:latest": "babel-node node_modules/.bin/knex migrate:latest",
+    "migrate:rollback": "babel-node node_modules/.bin/knex migrate:rollback",
+    "migrate:make": "babel-node node_modules/.bin/knex migrate:make",
+    "seed:run": "babel-node node_modules/.bin/knex seed:run",
+    "seed:make": "babel-node node_modules/.bin/knex seed:make",
     "start": "node index.js"
   },
   "author": "",
@@ -21,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0"

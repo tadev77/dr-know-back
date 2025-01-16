@@ -2,7 +2,7 @@
 export function up(knex) {
   return knex.schema.createTable("progress", (table) => {
     table.increments("id").primary();
-    table.date("current_day");
+    table.date("current_day").notNullable();
     table.integer("progress").notNullable();
     table.integer("student_id").unsigned().notNullable();
     table
