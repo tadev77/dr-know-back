@@ -1,13 +1,11 @@
-import db from "../config/knex.js";
+import userService from "../services/userService.js";
 
 async function getUserById(req, res) {
   const { id } = req.params;
 
   try {
-    const user = await db("users")
-      .where({ id })
-      .select("id", "name", "avatar")
-      .first();
+
+    const user = await userService.getUserById(id);
 
     if (!user) {
       return res.status(404).json({ error: "User not found." });
