@@ -2,6 +2,7 @@ export function up(knex) {
   return knex.schema.createTable("courses", (table) => {
     table.increments("id").primary();
     table.string("name").notNullable();
+    table.text('description');
     table.integer('ie_id').unsigned().notNullable();
     table
       .foreign('ie_id')
