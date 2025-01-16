@@ -8,7 +8,7 @@ describe("User Service", () => {
     jest.clearAllMocks();
   });
 
-  test("Encontra o usuário", async () => {
+  test("Encontra o plano de estudo", async () => {
     const mock = [
         { id: 1, text: "De 1 a 3 dias por semana" },
         { id: 2, text: "Entre 4 e 5 dias" },
@@ -19,5 +19,14 @@ describe("User Service", () => {
       select: jest.fn().mockReturnValueOnce(mock),
     });
     expect(await studyPlanService.getStudyPlans()).toBe(mock);
+  });
+
+  test("Cria plano de estudo para estudante", async () => {
+    const studentId = 1;
+    const studyPlanId = 1;
+    db.mockReturnValueOnce({
+      insert: jest.fn().mockReturnValueOnce(true),
+    });
+    expect(await studyPlanService.createStudentStudyPlan(studentId, studyPlanId)).toBe(true);
   });
 });
