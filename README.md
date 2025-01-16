@@ -12,7 +12,7 @@ Crie um arquivo `.env` tal como está em `.env-example`
 Faça as migrações e seeds de db
 
 ```
-npm run migrate:feature
+npm run migrate:latest
 npm run seed:run
 ```
 
