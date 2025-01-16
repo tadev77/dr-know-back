@@ -11,6 +11,13 @@ export function up(knex) {
       .inTable("users")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
+    table.integer("course_id").unsigned().notNullable();
+    table
+      .foreign("course_id")
+      .references("id")
+      .inTable("courses")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
     table.timestamps(true, true);
   });
 }
