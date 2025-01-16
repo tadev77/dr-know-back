@@ -4,7 +4,8 @@ import courseRoutes from './routes/courseRoutes.js';
 import studyPlanRoutes from './routes/studyPlanRoutes.js';
 import subjectRoutes from './routes/subjectRoutes.js'
 import completionRoutes from "./routes/completionRoutes.js";
-import progressRoute from './routes/progressRoutes.js'
+import progressRoute from './routes/progressRoutes.js';
+import performanceRoute from './routes/performanceRoutes.js';
 
 const router = express.Router();
 
@@ -15,6 +16,7 @@ router.use('/api',
 	subjectRoutes,
 	completionRoutes,
 	progressRoute,
+	performanceRoute,
 );
 
 router.get('/ping', (_req, res) => {
