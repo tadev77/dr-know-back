@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +16,8 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "knex": "^3.1.0",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "openai": "^4.42.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
