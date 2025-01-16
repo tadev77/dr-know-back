@@ -62,8 +62,6 @@ const studentData = async (userId, averageGrades) => {
         available_days: studyPlan.text
     };
 
-    console.log(data);
-
     return "Input:" + JSON.stringify(data);
 };
 
