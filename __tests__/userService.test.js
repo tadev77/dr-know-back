@@ -8,13 +8,13 @@ describe("User Service", () => {
     jest.clearAllMocks();
   });
 
-  test("Encontra o usuário", () => {
+  test("Encontra o usuário", async () => {
     const mockUser = { id: 1, name: "Bob", avatar: "https://google.com" };
     db.mockReturnValueOnce({
       where: jest.fn().mockReturnThis(),
       select: jest.fn().mockReturnThis(),
       first: jest.fn().mockReturnValueOnce(mockUser),
     });
-    expect(userService.getUserById(1)).toBe(mockUser);
+    expect(await userService.getUserById(1)).toBe(mockUser);
   });
 });
