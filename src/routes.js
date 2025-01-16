@@ -3,6 +3,7 @@ import userRoutes from './routes/userRoutes.js';
 import courseRoutes from './routes/courseRoutes.js';
 import studyPlanRoutes from './routes/studyPlanRoutes.js';
 import subjectRoutes from './routes/subjectRoutes.js'
+import completionRoutes from "./routes/completionRoutes.js";
 
 const router = express.Router();
 
@@ -11,6 +12,7 @@ router.use('/api',
 	courseRoutes,
 	studyPlanRoutes,
 	subjectRoutes,
+	completionRoutes,
 );
 
 router.get('/ping', (_req, res) => {
