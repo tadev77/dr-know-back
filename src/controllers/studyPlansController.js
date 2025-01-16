@@ -16,4 +16,17 @@ async function getStudyPlans(_req, res) {
   }
 }
 
-export { getStudyPlans };
+async function createStudentStudyPlan(req, res) {
+  const { studentId, studyPlanId } = req.body;
+
+  try {
+    await studyPlanService.createStudentStudyPlan(studentId, studyPlanId);
+
+    res.status(200).json("Student study plan created!");
+  } catch (error) {
+    console.error("Error creating student study plans:", error);
+    res.status(500).json({ error: "Failed to create student study plans." });
+  }
+}
+
+export { getStudyPlans, createStudentStudyPlan };
